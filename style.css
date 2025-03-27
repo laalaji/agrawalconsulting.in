@@ -1,8 +1,71 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
 }
-h1 {
-    color: blue;
+
+/* Header */
+header {
+    background-color: #003087;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f4f4f4;
+    padding: 100px 20px;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 36px;
+    color: #003087;
+}
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+h2 {
+    color: #003087;
+    margin-bottom: 20px;
+}
+.services-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.service-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 200px;
+}
+
+/* Footer */
+footer {
+    background-color: #003087;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
