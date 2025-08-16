@@ -69,8 +69,86 @@
       margin: 2rem auto 0;
     }
     
-    /* Mobile responsiveness */
+    /* Mobile Navigation Override */
     @media (max-width: 768px) {
+      /* Force hamburger button to show */
+      .menu-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 30px !important;
+        height: 22px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 1100 !important;
+        position: relative !important;
+      }
+      
+      .menu-btn span {
+        display: block !important;
+        height: 3px !important;
+        width: 100% !important;
+        background-color: #D4AF37 !important;
+        border-radius: 2px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hamburger animation */
+      .menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px) !important;
+        background-color: #fff !important;
+      }
+      
+      .menu-btn.active span:nth-child(2) {
+        opacity: 0 !important;
+      }
+      
+      .menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px) !important;
+        background-color: #fff !important;
+      }
+      
+      /* Mobile menu overlay */
+      #nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(30, 58, 138, 0.98) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: left 0.4s ease !important;
+        z-index: 1000 !important;
+        transform: none !important;
+      }
+      
+      #nav-links.active {
+        left: 0 !important;
+      }
+      
+      #nav-links a {
+        color: #D4AF37 !important;
+        font-size: 1.8rem !important;
+        margin: 1.5rem 0 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        transition: color 0.3s ease !important;
+        padding: 0 !important;
+      }
+      
+      #nav-links a:hover,
+      #nav-links a.active {
+        color: #fff !important;
+      }
+      
+      body.menu-open {
+        overflow: hidden !important;
+      }
+      
       .services .card-grid,
       .team .card-grid {
         grid-template-columns: 1fr;
@@ -130,7 +208,7 @@
   <section class="hero">
     <h1 class="typing" id="typing" data-text="Expert Taxation & Corporate Solutions"></h1>
     <p class="hero-sub">Your trusted partner in compliance and growth</p>
-    <a href="new_contact.html" class="btn cta-btn anim-pulse">Get in Touch</a>
+    <a href="contact.html" class="btn cta-btn anim-pulse">Get in Touch</a>
   </section>
   <!-- Services Section -->
   <section class="services fade-in-section">
@@ -167,16 +245,16 @@
         <p>Associate member of ICSI and Law Graduate. Specializes in Corporate Governance and Company Law matters.</p>
       </div>
       <div class="team-card anim-left anim-delay-1">
-        <h3>Mrs. Akriti Agrawal</h3>
-        <p>Founding member with expertise in accounting and strategic marketing.</p>
+	<h3>CA Goverdhan Singh Panwar</h3>
+        <p>Qualified Chartered Accountant with 3+ years of experience in finance, taxation, audits, GST, and business consultancy.</p>        
       </div>
       <div class="team-card anim-left anim-delay-2">
         <h3>Mr. Suresh Chandra Agrawal</h3>
         <p>Advocate with over 40 years of experience in Corporate Laws and Taxation.</p>
       </div>
       <div class="team-card anim-left anim-delay-3">
-        <h3>CA Goverdhan Singh Panwar</h3>
-        <p>Qualified Chartered Accountant with 3+ years of experience in finance, taxation, audits, GST, and business consultancy.</p>
+        <h3>Mrs. Akriti Agrawal</h3>
+        <p>Founding member with expertise in accounting and strategic marketing.</p>
       </div>
     </div>
   </section>
@@ -202,53 +280,65 @@
   <!-- Modern Animations & UI Scripts -->
   <script src="script.js"></script>
   <script>
-    // Wait for DOM to load completely
-    window.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation - Complete Working Solution
+    document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, initializing mobile menu...');
         
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
+        const body = document.body;
         
         if (menuBtn && navLinks) {
-            console.log('Menu elements found');
+            console.log('Menu elements found, setting up events...');
             
-            // Toggle menu on button click
+            // Toggle menu function
+            function toggleMenu() {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+                console.log('Menu toggled. Active:', menuBtn.classList.contains('active'));
+            }
+            
+            // Close menu function
+            function closeMenu() {
+                menuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+                console.log('Menu closed');
+            }
+            
+            // Menu button click
             menuBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
-                console.log('Menu button clicked');
-                
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-                
-                console.log('Menu active:', menuBtn.classList.contains('active'));
+                toggleMenu();
             });
             
-            // Close menu when clicking on navigation links
+            // Navigation link clicks
             navLinks.addEventListener('click', function(e) {
                 if (e.target.tagName === 'A') {
-                    console.log('Navigation link clicked, closing menu');
-                    menuBtn.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.classList.remove('menu-open');
+                    closeMenu();
                 }
             });
             
-            // Close menu when clicking outside
+            // Click outside to close
             document.addEventListener('click', function(e) {
                 if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-                    menuBtn.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.classList.remove('menu-open');
+                    if (navLinks.classList.contains('active')) {
+                        closeMenu();
+                    }
+                }
+            });
+            
+            // Escape key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    closeMenu();
                 }
             });
             
         } else {
             console.error('Menu elements not found!');
-            console.log('menuBtn:', menuBtn);
-            console.log('navLinks:', navLinks);
         }
     });
   </script>
