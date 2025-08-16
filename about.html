@@ -1,91 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrawal Consulting - About Us</title>
-    <style>
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: #f9f9f9; 
-            color: #333; 
-            line-height: 1.6;
-        }
-        header { 
-            background: #1E3A8A; 
-            color: white; 
-            padding: 1rem; 
-            text-align: center; 
-        }
-        nav a { 
-            color: #FFD700; 
-            margin: 0 15px; 
-            text-decoration: none; 
-            font-weight: 500;
-        }
-        nav a:hover { 
-            text-decoration: underline; 
-        }
-        .section { 
-            padding: 40px 20px; 
-            max-width: 900px; 
-            margin: auto; 
-        }
-        h2 { 
-            color: #1E3A8A; 
-            margin-bottom: 20px; 
-        }
-        p { 
-            margin-bottom: 20px; 
-        }
-        footer { 
-            background: #1E3A8A; 
-            color: white; 
-            text-align: center; 
-            padding: 20px; 
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Agrawal Consulting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-<body>
-    <header>
-        <h2>Agrawal Consulting</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="team.html">Team</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="section">
-        <h2>About Us</h2>
-        <p>
-            At <strong>Agrawal Consulting</strong>, we provide expert <strong>Taxation, Accounting, 
-            and Company Secretarial</strong> services to businesses of all sizes. With a deep 
-            understanding of <em>Accounting, Corporate Governance, and Compliance</em>, we are committed 
-            to helping our clients navigate the complexities of running a business efficiently 
-            and in full compliance with regulations.
-        </p>
-        <p>
-            Our team consists of experienced professionals who offer tailored solutions 
-            for managing corporate affairs, ensuring tax compliance, and optimizing tax strategies. 
-            Whether you need assistance with business registration, compliance filings, 
-            or comprehensive tax planning, we are here to support your business every step of the way.
-        </p>
-        <p>
-            We pride ourselves on delivering <strong>high-quality services, clear advice, 
-            and personalized support</strong> that allow you to focus on growing your business 
-            while we handle the legal and financial intricacies.
-        </p>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Agrawal Consulting</a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+        <a href="about.html" class="text-indigo-600 font-semibold">About</a>
+        <a href="services.html" class="hover:text-indigo-600 transition">Services</a>
+        <a href="team.html" class="hover:text-indigo-600 transition">Team</a>
+        <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>© 2025 Agrawal Consulting. All Rights Reserved.</p>
-        <p>Contact: +91 98936 92018 | csarpit@agrawalconsulting.in</p>
-    </footer>
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 bg-gradient-to-r from-indigo-50 to-indigo-100">
+    <div class="max-w-5xl mx-auto text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 reveal">About Us</h1>
+      <p class="text-lg text-gray-600 reveal">
+        Learn more about Agrawal Consulting, our mission, and our commitment to delivering value.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 space-y-6 text-lg text-gray-700 leading-relaxed">
+      <p class="reveal">
+        Agrawal Consulting was founded with the vision of helping businesses harness the power of technology and strategic insights to achieve sustainable growth. We believe in a client-first approach, ensuring our solutions are tailored to each business's unique challenges and goals.
+      </p>
+      <p class="reveal">
+        Our expertise spans across technology consulting, cybersecurity, and business strategy. With years of experience, we pride ourselves on delivering solutions that combine innovation with practicality.
+      </p>
+      <p class="reveal">
+        At Agrawal Consulting, our mission is simple: to empower businesses with the right tools, knowledge, and strategies to thrive in the digital era.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <p>&copy; 2025 Agrawal Consulting. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="services.html" class="hover:text-white">Services</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Animations -->
+  <script>
+    ScrollReveal().reveal('.reveal', {
+      delay: 200,
+      distance: '40px',
+      origin: 'bottom',
+      duration: 800,
+      easing: 'ease-in-out',
+      interval: 200
+    });
+  </script>
 </body>
 </html>
