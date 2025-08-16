@@ -1,215 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agrawal Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Modern Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Custom Modern Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader">
-      <div class="loader-ring"></div>
-      <div class="loader-text">Agrawal Consulting</div>
-    </div>
+  <!-- Loading Animation -->
+  <div class="loader-bg" id="loader-bg">
+    <div class="loader"></div>
+    <span class="loader-text">Agrawal Consulting</span>
   </div>
-
-  <!-- Animated Background -->
-  <div class="bg-animation">
-    <div class="floating-shape shape-1"></div>
-    <div class="floating-shape shape-2"></div>
-    <div class="floating-shape shape-3"></div>
-    <div class="floating-shape shape-4"></div>
-    <div class="floating-shape shape-5"></div>
+  <!-- Background Animation -->
+  <div class="bg-animated">
+    <div class="circle"></div>
+    <div class="circle delay"></div>
+    <div class="circle small"></div>
   </div>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
 
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Header / Navbar -->
-  <header class="header">
-    <div class="header-container">
-      <h2 class="logo">
-        <span class="logo-text">Agrawal Consulting</span>
-      </h2>
-      
-      <!-- Hamburger -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Navigation/Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo"><span>Agrawal Consulting</span></div>
+      <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
+        <span></span><span></span><span></span>
       </button>
-      
-      <!-- Navigation -->
-      <nav class="nav-links" id="navLinks" role="navigation">
-        <a href="index.html" class="nav-link">
-          <span class="nav-text">Home</span>
-          <span class="nav-underline"></span>
-        </a>
-        <a href="about.html" class="nav-link">
-          <span class="nav-text">About Us</span>
-          <span class="nav-underline"></span>
-        </a>
-        <a href="services.html" class="nav-link">
-          <span class="nav-text">Services</span>
-          <span class="nav-underline"></span>
-        </a>
-        <a href="team.html" class="nav-link">
-          <span class="nav-text">Team</span>
-          <span class="nav-underline"></span>
-        </a>
-        <a href="contact.html" class="nav-link">
-          <span class="nav-text">Contact</span>
-          <span class="nav-underline"></span>
-        </a>
+      <nav id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-bg"></div>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="typing-text" data-text="Expert Taxation & Corporate Solutions"></span>
-      </h1>
-      <p class="hero-subtitle">Your trusted partner in compliance and growth</p>
-      <a href="contact.html" class="btn btn-primary">
-        <span class="btn-text">Get in Touch</span>
-        <span class="btn-ripple"></span>
-      </a>
-    </div>
-    <div class="hero-bg-gradient"></div>
+  <section class="hero">
+    <h1 class="typing" id="typing" data-text="Expert Taxation & Corporate Solutions"></h1>
+    <p class="hero-sub">Your trusted partner in compliance and growth</p>
+    <a href="contact.html" class="btn cta-btn anim-pulse">Get in Touch</a>
   </section>
 
   <!-- About Section -->
-  <section class="section about-section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Us</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="about-content">
-        <p class="about-text">At Agrawal Consulting, we provide expert Taxation, Accounting and Company Secretarial services to businesses of all sizes. With a deep understanding of Accounting, Corporate Governance, compliance, and the ever-evolving landscape of taxation laws, we are committed to helping our clients navigate the complexities of running a business efficiently and in full compliance with regulations.</p>
-      </div>
-    </div>
+  <section class="about fade-in-section">
+    <h2>About Us</h2>
+    <p>
+      At Agrawal Consulting, we provide expert Taxation, Accounting and Company Secretarial services to businesses of all sizes. 
+      With a deep understanding of Accounting, Corporate Governance, compliance, and the ever-evolving landscape of taxation laws, 
+      we are committed to helping our clients navigate the complexities of running a business efficiently and in full compliance with regulations.
+    </p>
   </section>
 
   <!-- Services Section -->
-  <section class="section services-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Services</h2>
-        <div class="section-underline"></div>
+  <section class="services fade-in-section">
+    <h2>Our Services</h2>
+    <div class="card-grid">
+      <div class="service-card anim-up">
+        <h3>Company Secretarial Services</h3>
+        <p>Corporate governance, statutory compliance, board meeting documentation, annual filings, and more.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="card-inner">
-            <div class="card-icon">
-              <div class="icon-shape"></div>
-            </div>
-            <h3 class="card-title">Company Secretarial Services</h3>
-            <p class="card-description">Corporate governance, statutory compliance, board meeting documentation, annual filings, and more.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="card-inner">
-            <div class="card-icon">
-              <div class="icon-shape"></div>
-            </div>
-            <h3 class="card-title">Taxation Consulting</h3>
-            <p class="card-description">Tax planning, strategy, compliance, corporate taxes, personal tax advice, and more.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="card-inner">
-            <div class="card-icon">
-              <div class="icon-shape"></div>
-            </div>
-            <h3 class="card-title">GST Services</h3>
-            <p class="card-description">Registration, Filing, Advisory, Compliance, Audits</p>
-          </div>
-        </div>
+      <div class="service-card anim-up anim-delay-1">
+        <h3>Taxation Consulting</h3>
+        <p>Tax planning, strategy, compliance, corporate taxes, personal tax advice, and more.</p>
+      </div>
+      <div class="service-card anim-up anim-delay-2">
+        <h3>GST Services</h3>
+        <p>Registration, Filing, Advisory, Compliance, Audits</p>
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section class="section team-section" id="team">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Team</h2>
-        <div class="section-underline"></div>
+  <section class="team fade-in-section">
+    <h2>Our Team</h2>
+    <div class="card-grid">
+      <div class="team-card anim-left">
+        <h3>CS Arpit Agrawal</h3>
+        <p>Associate member of ICSI and Law Graduate. Specializes in Corporate Governance and Company Law matters.</p>
       </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="card-inner">
-            <div class="team-avatar">
-              <div class="avatar-bg"></div>
-            </div>
-            <h3 class="card-title">CS Arpit Agrawal</h3>
-            <p class="card-description">Associate member of ICSI and Law Graduate. Specializes in Corporate Governance and Company Law matters.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="card-inner">
-            <div class="team-avatar">
-              <div class="avatar-bg"></div>
-            </div>
-            <h3 class="card-title">Mrs. Akriti Agrawal</h3>
-            <p class="card-description">Founding member with expertise in accounting and strategic marketing.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="card-inner">
-            <div class="team-avatar">
-              <div class="avatar-bg"></div>
-            </div>
-            <h3 class="card-title">Mr. Suresh Chandra Agrawal</h3>
-            <p class="card-description">Advocate with over 40 years of experience in Corporate Laws and Taxation.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="card-inner">
-            <div class="team-avatar">
-              <div class="avatar-bg"></div>
-            </div>
-            <h3 class="card-title">CA Goverdhan Singh Panwar</h3>
-            <p class="card-description">Qualified Chartered Accountant with 3+ years of professional experience in core areas of finance, taxation, Income Tax and GST, and business consultancy. Practice built on the foundation of integrity, precision, and a client-centric approach.</p>
-          </div>
-        </div>
+      <div class="team-card anim-left anim-delay-1">
+        <h3>Mrs. Akriti Agrawal</h3>
+        <p>Founding member with expertise in accounting and strategic marketing.</p>
+      </div>
+      <div class="team-card anim-left anim-delay-2">
+        <h3>Mr. Suresh Chandra Agrawal</h3>
+        <p>Advocate with over 40 years of experience in Corporate Laws and Taxation.</p>
+      </div>
+      <div class="team-card anim-left anim-delay-3">
+        <h3>CA Goverdhan Singh Panwar</h3>
+        <p>Qualified Chartered Accountant with 3+ years of experience in finance, taxation, audits, GST, and business consultancy.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="contact-content">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <p>Contact Number: +919893692018</p>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <p>Email: csarpit@agrawalconsulting.in</p>
-        </div>
-      </div>
-    </div>
+  <section class="contact fade-in-section">
+    <h2>Contact Us</h2>
+    <p><b>Phone:</b> +91 9893692018</p>
+    <p><b>Email:</b> csarpit@agrawalconsulting.in</p>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Agrawal Consulting. All Rights Reserved.</p>
-    </div>
+  <footer>
+    &copy; 2025 Agrawal Consulting. All Rights Reserved.
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Modern Animations & UI Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
