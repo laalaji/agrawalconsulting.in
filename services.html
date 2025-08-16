@@ -4,80 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services - Agrawal Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     header {
-      background: #004080;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
+      background: #1a1a1a;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    header nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease-in-out;
+    header h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    header nav a:hover {
+    nav a {
+      color: #f0f0f0;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
       color: #ffd700;
     }
 
-    .container {
-      width: 85%;
-      max-width: 1100px;
-      margin: 40px auto;
-      animation: fadeIn 1.5s ease;
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #ffd70030, #ffd70010);
+      animation: fadeIn 1s ease-in;
     }
 
-    h1 {
+    .hero h2 {
       font-size: 2.5rem;
-      color: #004080;
-      margin-bottom: 20px;
-      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1rem;
       animation: slideDown 1s ease;
     }
 
-    .service {
-      background: white;
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeUp 1s ease;
+    .hero p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    .content {
+      padding: 3rem 8%;
+      animation: fadeInUp 1s ease;
     }
 
-    .service h2 {
-      color: #004080;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+    .content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #111;
+      border-left: 4px solid #ffd700;
+      padding-left: 10px;
+    }
+
+    .content p {
+      margin-bottom: 1.5rem;
+      color: #333;
     }
 
     footer {
-      background: #004080;
-      color: white;
+      background: #1a1a1a;
+      color: #ccc;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 2rem 5%;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
     }
 
     @keyframes fadeIn {
@@ -85,28 +106,31 @@
       to {opacity: 1;}
     }
 
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
     @keyframes slideDown {
-      from {transform: translateY(-30px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
-    @keyframes fadeUp {
-      from {transform: translateY(30px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
-    }
-
-    @media(max-width: 768px) {
-      h1 {
+    @media (max-width: 768px) {
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.95rem;
+      }
+      .hero h2 {
         font-size: 2rem;
       }
-      .container {
-        width: 90%;
+      .content h3 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Agrawal Consulting</h1>
     <nav>
@@ -118,39 +142,30 @@
     </nav>
   </header>
 
-  <div class="container">
-    <h1>Our Services</h1>
+  <section class="hero">
+    <h2>Our Services</h2>
+    <p>At Agrawal Consulting, we offer a comprehensive suite of services tailored to empower organizations, optimize business processes, and drive sustainable growth.</p>
+  </section>
 
-    <div class="service">
-      <h2>Business Strategy Consulting</h2>
-      <p>We help businesses craft strategies that drive sustainable growth, profitability, and long-term market leadership. Our strategies are tailored to each client’s unique needs.</p>
-    </div>
+  <section class="content">
+    <h3>Business Consulting</h3>
+    <p>We help organizations identify challenges, streamline operations, and unlock growth opportunities through proven consulting strategies.</p>
 
-    <div class="service">
-      <h2>Financial Advisory</h2>
-      <p>From capital structuring to investment planning, we provide expert financial insights that help businesses optimize performance and manage risks effectively.</p>
-    </div>
+    <h3>Technology Advisory</h3>
+    <p>Our experts provide guidance on IT infrastructure, digital transformation, and cybersecurity to ensure businesses remain secure and future-ready.</p>
 
-    <div class="service">
-      <h2>Digital Transformation</h2>
-      <p>We empower organizations to embrace modern technologies, streamline operations, and create seamless digital experiences for their clients and stakeholders.</p>
-    </div>
+    <h3>Financial Advisory</h3>
+    <p>From financial planning to risk management, our team assists clients in making informed decisions that ensure long-term stability.</p>
 
-    <div class="service">
-      <h2>Market Research & Analysis</h2>
-      <p>Our in-depth market research provides actionable insights that enable businesses to make informed decisions and stay ahead of competitors.</p>
-    </div>
+    <h3>Compliance & Risk Management</h3>
+    <p>We help businesses align with regulatory frameworks while proactively identifying and mitigating risks to ensure compliance and resilience.</p>
 
-    <div class="service">
-      <h2>Risk & Compliance Management</h2>
-      <p>We help organizations identify, assess, and mitigate risks while ensuring compliance with evolving industry standards and regulations.</p>
-    </div>
-
-  </div>
+    <h3>Training & Development</h3>
+    <p>Our training programs empower professionals with the skills and knowledge needed to thrive in today’s evolving corporate environment.</p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Agrawal Consulting. All rights reserved.</p>
+    <p>&copy; 2025 Agrawal Consulting. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
