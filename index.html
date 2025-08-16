@@ -112,7 +112,9 @@
     <div class="navbar">
       <div class="logo"><span>Agrawal Consulting</span></div>
       <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <nav id="nav-links">
         <a href="index.html" class="active">Home</a>
@@ -200,29 +202,38 @@
   <!-- Modern Animations & UI Scripts -->
   <script src="script.js"></script>
   <script>
-    // Mobile Navigation Menu - FIXED VERSION
-    document.addEventListener('DOMContentLoaded', function() {
+    // Wait for DOM to load completely
+    window.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, initializing mobile menu...');
+        
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         
         if (menuBtn && navLinks) {
+            console.log('Menu elements found');
+            
+            // Toggle menu on button click
             menuBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
+                console.log('Menu button clicked');
+                
                 menuBtn.classList.toggle('active');
                 navLinks.classList.toggle('active');
                 document.body.classList.toggle('menu-open');
+                
+                console.log('Menu active:', menuBtn.classList.contains('active'));
             });
             
-            // Close menu when clicking navigation links
-            const navLinksItems = navLinks.querySelectorAll('a');
-            navLinksItems.forEach(link => {
-                link.addEventListener('click', function() {
+            // Close menu when clicking on navigation links
+            navLinks.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    console.log('Navigation link clicked, closing menu');
                     menuBtn.classList.remove('active');
                     navLinks.classList.remove('active');
                     document.body.classList.remove('menu-open');
-                });
+                }
             });
             
             // Close menu when clicking outside
@@ -233,6 +244,11 @@
                     document.body.classList.remove('menu-open');
                 }
             });
+            
+        } else {
+            console.error('Menu elements not found!');
+            console.log('menuBtn:', menuBtn);
+            console.log('navLinks:', navLinks);
         }
     });
   </script>
