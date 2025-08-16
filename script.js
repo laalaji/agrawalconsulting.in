@@ -1,4 +1,4 @@
-// Wait till DOM is loaded
+// Wait till the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   const loaderBg = document.getElementById('loader-bg');
   const typingEl = document.getElementById('typing');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollProgress = document.getElementById('scroll-progress');
   const fadeSections = document.querySelectorAll('.fade-in-section');
 
-  // Loading Screen fade out after page load
+  // Loading Screen fades out after the page load
   window.addEventListener('load', () => {
     setTimeout(() => {
       loaderBg.classList.add('fade-out');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Start typing with slight delay
+    // Start typing with a slight delay
     setTimeout(typeWriter, 700);
   }
 
