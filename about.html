@@ -1,75 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Agrawal Consulting</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Agrawal Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Only cosmetic enhancements, no font-size! */
+    .about-content {
+      max-width: 700px;
+      margin: 2.5rem auto 0;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(30,58,138,0.08), 0 2px 8px rgba(212,175,55,0.06);
+      padding: 2.7rem 2.1rem 2.1rem 2.1rem;
+      text-align: left;
+    }
+    .about-content p {
+      margin: 0 0 1.5em 0;
+      /* font-size: inherit;  <-- DO NOT set! */
+      color: #283146;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+    .about-content .about-highlight {
+      background: linear-gradient(90deg, #fff8e1 60%, #fffbe6 100%);
+      border-left: 4px solid #D4AF37;
+      padding: 1.05rem 1.2rem 1.05rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(212,175,55,0.05);
+      color: #213A8A;
+      font-weight: 600;
+      margin-top: 1.9rem;
+    }
+    .about-content b, .about-content strong {
+      font-weight: 600;
+      color: #1E3A8A;
+    }
+    .about-content em, .about-content i {
+      color: #3755b8;
+      font-style: italic;
+      font-weight: 400;
+    }
+    @media (max-width:600px) {
+      .about-content {
+        padding: 2rem 0.4rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+  <!-- Loading Animation -->
+  <div class="loader-bg" id="loader-bg">
+    <div class="loader"></div>
+    <span class="loader-text">Agrawal Consulting</span>
+  </div>
+  <!-- Background Animation -->
+  <div class="bg-animated">
+    <div class="circle"></div>
+    <div class="circle delay"></div>
+    <div class="circle small"></div>
+  </div>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
 
-  <!-- Navbar -->
-  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-indigo-600">Agrawal Consulting</a>
-      <nav class="space-x-6 hidden md:flex">
-        <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-        <a href="about.html" class="text-indigo-600 font-semibold">About</a>
-        <a href="services.html" class="hover:text-indigo-600 transition">Services</a>
-        <a href="team.html" class="hover:text-indigo-600 transition">Team</a>
-        <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
+  <!-- Navigation/Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo"><span>Agrawal Consulting</span></div>
+      <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="about.html" class="active">About Us</a>
+	<a href="new_contact.html">Contact</a>
+        <div class="nav-bg"></div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-28 pb-16 bg-gradient-to-r from-indigo-50 to-indigo-100">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 reveal">About Us</h1>
-      <p class="text-lg text-gray-600 reveal">
-        Learn more about Agrawal Consulting, our mission, and our commitment to delivering value.
-      </p>
-    </div>
-  </section>
-
-  <!-- About Content -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6 space-y-6 text-lg text-gray-700 leading-relaxed">
-      <p class="reveal">
-        Agrawal Consulting was founded with the vision of helping businesses harness the power of technology and strategic insights to achieve sustainable growth. We believe in a client-first approach, ensuring our solutions are tailored to each business's unique challenges and goals.
-      </p>
-      <p class="reveal">
-        Our expertise spans across technology consulting, cybersecurity, and business strategy. With years of experience, we take pride in delivering solutions that combine innovation with practicality.
-      </p>
-      <p class="reveal">
-        At Agrawal Consulting, our mission is simple: to empower businesses with the right tools, knowledge, and strategies to thrive in the digital era.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <p>&copy; 2025 Agrawal Consulting. All rights reserved.</p>
-      <div class="space-x-4">
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="services.html" class="hover:text-white">Services</a>
-        <a href="contact.html" class="hover:text-white">Contact</a>
+  <main>
+    <section class="about fade-in-section">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <p>
+          At <b>Agrawal Consulting</b>, we provide expert Taxation, Accounting, and Company Secretarial services to businesses of all sizes. With a deep understanding of <em>Accounting, Corporate Governance, and Compliance</em>, we are committed to helping our clients navigate the complexities of running a business efficiently and in full compliance with regulations.
+        </p>
+        <p>
+          Our team consists of experienced professionals who offer tailored solutions for managing corporate affairs, ensuring tax compliance, and optimizing tax strategies. Whether you need assistance with business registration, compliance filings, or comprehensive tax planning, we are here to support your business every step of the way.
+        </p>
+        <div class="about-highlight">
+          We pride ourselves on delivering <b>high-quality services, clear advice, and personalized support</b> that allow you to focus on growing your business while we handle the legal and financial intricacies.
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
+  </main>
 
-  <!-- Animations -->
-  <script>
-    ScrollReveal().reveal('.reveal', {
-      delay: 200,
-      distance: '40px',
-      origin: 'bottom',
-      duration: 800,
-      easing: 'ease-in-out',
-      interval: 200
-    });
-  </script>
+  <footer>
+    &copy; 2025 Agrawal Consulting. All Rights Reserved.
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
