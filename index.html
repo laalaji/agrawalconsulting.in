@@ -128,7 +128,7 @@
   <section class="hero">
     <h1 class="typing" id="typing" data-text="Expert Taxation & Corporate Solutions"></h1>
     <p class="hero-sub">Your trusted partner in compliance and growth</p>
-    <a href="contact.html" class="btn cta-btn anim-pulse">Get in Touch</a>
+    <a href="new_contact.html" class="btn cta-btn anim-pulse">Get in Touch</a>
   </section>
   <!-- Services Section -->
   <section class="services fade-in-section">
@@ -199,5 +199,42 @@
   </footer>
   <!-- Modern Animations & UI Scripts -->
   <script src="script.js"></script>
+  <script>
+    // Mobile Navigation Menu - FIXED VERSION
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+            
+            // Close menu when clicking navigation links
+            const navLinksItems = navLinks.querySelectorAll('a');
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    menuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        }
+    });
+  </script>
 </body>
 </html>
