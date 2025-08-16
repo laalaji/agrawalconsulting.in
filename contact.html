@@ -1,38 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrawal Consulting - Contact</title>
-    <style>
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-        header { background: #1E3A8A; color: white; padding: 1rem; text-align: center; }
-        nav a { color: #D4AF37; margin: 0 15px; text-decoration: none; }
-        .section { padding: 40px; max-width: 1200px; margin: auto; }
-        footer { background: #1E3A8A; color: white; text-align: center; padding: 20px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Agrawal Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-hero {
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      background: linear-gradient(90deg, #fffbe6 40%, #f7f4e8 100%);
+      box-shadow: 0 4px 16px rgba(212,175,55,0.03);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: justify;
+      font-size: 1.1rem;
+      color: #1E376C;
+      line-height: 1.6;
+    }
+    
+    .contact-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 0 1rem;
+    }
+    
+    .contact-info {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,40,120,0.08);
+      padding: 2rem;
+    }
+    
+    .contact-form {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,40,120,0.08);
+      padding: 2rem;
+    }
+    
+    .contact-info h3, .contact-form h3 {
+      color: #1E3A8A;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border-left: 4px solid #D4AF37;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #004aad, #D4AF37);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+      color: #1E3A8A;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.3rem 0;
+    }
+    
+    .contact-details p {
+      color: #5A6B8D;
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+    
+    .contact-details a {
+      color: #004aad;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-details a:hover {
+      color: #D4AF37;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      color: #1E3A8A;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #004aad;
+    }
+    
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: #004aad;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      background: #003080;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,74,173,0.3);
+    }
+    
+    .office-hours {
+      background: #fffbe6;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    
+    .office-hours h4 {
+      color: #1E3A8A;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      text-align: center;
+    }
+    
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .hours-item span:first-child {
+      color: #1E3A8A;
+      font-weight: 600;
+    }
+    
+    .hours-item span:last-child {
+      color: #5A6B8D;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 0.5rem;
+      }
+      
+      .contact-info, .contact-form {
+        padding: 1.5rem;
+      }
+      
+      .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      
+      .contact-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h2>Agrawal Consulting</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="team.html">Team</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <!-- Loading Animation -->
+  <div class="loader-bg" id="loader-bg">
+    <div class="loader"></div>
+    <span class="loader-text">Agrawal Consulting</span>
+  </div>
+  <div class="bg-animated">
+    <div class="circle"></div>
+    <div class="circle delay"></div>
+    <div class="circle small"></div>
+  </div>
+  <div class="scroll-progress" id="scroll-progress"></div>
 
-    <div class="section">
-        <h2>Contact Us</h2>
-        <p>Contact Number: +919340457440</p>
-        <p>Email: csarpit@agrawalconsulting.in</p>
+  <header>
+    <div class="navbar">
+      <div class="logo"><span>Agrawal Consulting</span></div>
+      <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <div class="nav-bg"></div>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>© 2025 Agrawal Consulting. All Rights Reserved.</p>
-        <p>Contact: +919893692018 | csarpit@agrawalconsulting.in</p>
-    </footer>
+  <main>
+    <section class="contact fade-in-section">
+      <h2>Contact Us</h2>
+      
+      <div class="contact-hero">
+        We're here to help you navigate the complexities of taxation, corporate governance, and business compliance. Whether you need immediate assistance or want to discuss long-term strategies, our experienced team is ready to provide personalized solutions tailored to your specific needs. Reach out to us through any of the channels below, and let's start building a successful partnership for your business growth.
+      </div>
+
+      <div class="contact-content">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <p><a href="tel:+919893692018">+91 9893692018</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p><a href="mailto:csarpit@agrawalconsulting.in">csarpit@agrawalconsulting.in</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div class="contact-details">
+              <h4>Website</h4>
+              <p><a href="https://agrawalconsulting.in" target="_blank">www.agrawalconsulting.in</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-details">
+              <h4>Service Areas</h4>
+              <p>Pan India Services<br>Specialized in Corporate Laws & Taxation</p>
+            </div>
+          </div>
+          
+          <div class="office-hours">
+            <h4>Business Hours</h4>
+            <div class="hours-item">
+              <span>Monday - Friday</span>
+              <span>9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span>Saturday</span>
+              <span>10:00 AM - 4:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span>Sunday</span>
+              <span>By Appointment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3>Send Us A Message</h3>
+          
+          <form action="#" method="POST" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a Service</option>
+                <option value="company-secretarial">Company Secretarial Services</option>
+                <option value="taxation">Taxation Consulting</option>
+                <option value="gst">GST Services</option>
+                <option value="business-registration">Business Registration</option>
+                <option value="compliance">Compliance Advisory</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Agrawal Consulting. All Rights Reserved.
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const service = formData.get('service');
+      const message = formData.get('message');
+      
+      // Here you would typically send the data to your server
+      // For now, we'll just show a success message
+      alert('Thank you for your message! We will get back to you soon.');
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
 </body>
 </html>
