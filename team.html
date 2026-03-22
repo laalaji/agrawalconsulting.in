@@ -52,6 +52,13 @@
       text-align: left;
     }
     
+    .team-cell.lone {
+      grid-column: 1 / -1;
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
     .profile-avatar {
       width: 80px;
       height: 80px;
@@ -153,6 +160,11 @@
       .team-cell.expanded {
         grid-column: span 1;
       }
+
+      .team-cell.lone {
+        grid-column: span 1;
+        max-width: 100%;
+      }
       
       .team-cell.expanded .profile-avatar {
         float: none;
@@ -183,7 +195,6 @@
     <div class="circle small"></div>
   </div>
   <div class="scroll-progress" id="scroll-progress"></div>
-
   <header>
     <div class="navbar">
       <div class="logo"><span>Agrawal Consulting</span></div>
@@ -200,7 +211,6 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="team fade-in-section">
       <h2>Our Team</h2>
@@ -208,7 +218,6 @@
       <div class="team-summary">
         At Agrawal Consulting, our team is the foundation of our commitment to excellence and integrity in every client engagement. We bring together experts across company law, taxation, accounting, audit, and business advisory, blending decades of insight with contemporary, client-focused solutions. Led by founder CS Arpit Agrawal, our professionals combine legal acumen, strategic thinking, and practical business experience to deliver holistic services tailored for each client's needs.
       </div>
-
       <div class="team-calendar">
         <!-- Team Member 1 -->
         <div class="team-cell">
@@ -223,7 +232,6 @@
             Mr. Arpit is an Associate member of The Institute of Company Secretaries of India (ICSI) and a Law Graduate from Renaissance University, Indore. He also possesses a Master's in Laws specialization in Corporate Laws. The enthusiastic and dynamic visionary, He is a man of strong judgment and deep insight. He has extensive knowledge and experience in Corporate Governance and various Company Law matters. He specializes in handling compliance of Listed Companies, Private and Public Companies, LLP's and Partnerships. He is also actively involved in Advisory and Strategy framing on various corporate transactions, Mergers, Demergers, Capital Reductions and Acquisitions.
           </div>
         </div>
-
         <!-- Team Member 2 -->
         <div class="team-cell">
           <div class="profile-avatar">GP</div>
@@ -237,7 +245,6 @@
             Founding Member CA Goverdhan Singh Panwar is a qualified Chartered Accountant with more than 3 years of professional experience in core areas of finance, taxation, Income Tax and GST and business consultancy. His practice is built on the foundation of integrity, precision, and a client-centric approach. Over the years, He has gained extensive hands-on experience in: 1. Income Tax Advisory & Compliance. 2. GST Registration, Filing, Consultation and Scrutiny. 3. Statutory & Internal Audits of Companies. 4. Project Finance & Loan Syndication.
           </div>
         </div>
-
         <!-- Team Member 3 -->
         <div class="team-cell">
           <div class="profile-avatar">SA</div>
@@ -250,7 +257,6 @@
             Mr. Suresh is an Advocate and possesses significant experience of more than 40 years in the field of Advisory and Consultancy Services under Corporate Laws, Goods and Services Tax, Income Tax, VAT, Customs, etc. Always at the forefront with his prudent decision-making, keen vision & unmatched knowledge base, Mr. Agrawal has been instrumental in handling numerous tax-related matters for over four decades.
           </div>
         </div>
-
         <!-- Team Member 4 -->
         <div class="team-cell">
           <div class="profile-avatar">AA</div>
@@ -263,14 +269,25 @@
             Mrs. Akriti is the founding member of Agrawal Consulting, an experienced accounting professional with a strong passion for helping businesses thrive through effective financial management and strategic marketing. With a background in accounting, she specializes in providing tailored financial solutions that empower businesses to achieve their financial goals with precision and clarity. She is also a seasoned social media and marketing professional which help businesses amplify their online presence and engage with their audience through creative, data-driven marketing strategies.
           </div>
         </div>
+        <!-- Team Member 5 -->
+        <div class="team-cell lone">
+          <div class="profile-avatar">AG</div>
+          <h3>CS Arushi Gulati</h3>
+          <div class="designation">Company Secretary</div>
+          <div class="short-desc">
+            Qualified Company Secretary with hands-on experience in FEMA Compliances, Corporate Funding and Companies Act compliances.
+          </div>
+          <button class="read-more-btn" onclick="toggleTeamMember(this)">Read More</button>
+          <div class="full-desc">
+            Ms. Arushi Gulati is a qualified Company Secretary with hands-on experience in handling FEMA Compliances, Corporate Funding and Companies Act compliances. She is actively involved in Advisory and Strategy framing on various cross-border corporate transactions and Debt Listing.
+          </div>
+        </div>
       </div>
     </section>
   </main>
-
   <footer>
     &copy; 2025 Agrawal Consulting. All Rights Reserved.
   </footer>
-
   <script src="script.js"></script>
   <script>
     function toggleTeamMember(button) {
